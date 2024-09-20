@@ -13,4 +13,15 @@ const sendToDiscord = async (data) => {
     }
 };
 
-module.exports = { sendToDiscord };
+const sendToAnyDiscord = async (url, message) => {
+    try {
+        const response = await axios.post(url, {
+            content: message,
+        });
+        console.log('Mensagem enviada para o Discord:', response.status);
+    } catch (error) {
+        console.error('Erro ao enviar para o Discord:', error.message);
+    }
+};
+
+module.exports = { sendToDiscord, sendToAnyDiscord };

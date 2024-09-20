@@ -12,6 +12,12 @@ app.post("/send-message", async (req, res) => {
   res.status(200).send("Mensagem processada.");
 });
 
+app.post("/send-message-any-discord", async (req, res) => {
+  const { url, message } = req.body;
+  await sendToAnyDiscord(url, message);
+  res.status(200).send("Mensagem processada.");
+});
+
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
