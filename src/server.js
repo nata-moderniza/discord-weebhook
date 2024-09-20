@@ -1,5 +1,5 @@
 const express = require("express");
-const { sendToDiscord } = require("./webhookHandler");
+const { sendToDiscord, sendToAnyDiscord } = require("./webhookHandler");
 
 const app = express();
 app.use(express.json());
