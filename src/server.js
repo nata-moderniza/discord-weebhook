@@ -1,10 +1,16 @@
 const express = require("express");
-const axios = require("axios");
+const { sendToDiscord } = require("./webhookHandler");
 
 const app = express();
 app.use(express.json());
 
 const PORT = process.env.PORT || 3002;
+
+app.post("/send-message", async (req, res) => {
+  const data = req.body;
+  await sendToDiscord(data);
+  res.status(200).send("Mensagem processada.");
+});
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
