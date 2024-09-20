@@ -42,9 +42,9 @@ app.post('/github-webhook', async (req, res) => {
 });
 
 app.post("/deploy-webhook", async (req, res) => {
-  const { url, date_deploy } = req.body;
+  const { url, project, date_deploy } = req.body;
 
-  const message = `O projeto foi atualizado as ${date_deploy}`
+  const message = `O projeto ${project} foi atualizado as ${date_deploy}`
   await sendToAnyDiscord(url, message);
   res.status(200).send("Mensagem processada.");
 });
