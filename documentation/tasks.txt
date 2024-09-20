@@ -1,0 +1,7 @@
+Próximas Tarefas
+
+1 - Criar um arquivo com a descrição das tarefas
+2 - Criar uma novo endpoint que irá receber uma objeto com uma url e uma mensagem. Essa url deverá ser um weebhook do discord e após receber deverá chamar esse weebhook
+3 - Criar uma validação para verificar se as mensagems tem conteúdo
+4 - Criar um endpoint para receber Notifiações do GitHub e encaminhar para o discord.
+5 - Criar um endpoint para avisar quando o deploy for concluído.
